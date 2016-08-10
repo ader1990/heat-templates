@@ -346,7 +346,7 @@ function Install-Drupal7 {
 
     $drushEnvPath = ";$env:ProgramData\Drush\" +
                     ";${env:ProgramFiles(x86)}\Drush\GnuWin32\bin" +
-                    ";${env:ProgramFiles(x86)}\Drush\Php"
+                    ";C:\PHP\PHP54"
     $env:Path += $drushEnvPath
 
     LogTo-File "Start configure Drupal website with Drush"
@@ -362,7 +362,7 @@ function Install-Drupal7 {
                               --account-pass=$AdminPassword `
                               --site-name="$WebsiteName" `
                               --site-mail=$AdminEmail `
-                              --y
+                              --yes --debug --verbose
     } -ErrorMessage "Failed to configure Drupal site with drush"
 
 
